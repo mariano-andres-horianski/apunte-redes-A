@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes de Datos · Plataforma de Estudio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <button type="button" id="btn-brand" class="brand" aria-label="Ir al inicio">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="6" height="6" rx="1"></rect>
+            <rect x="16" y="3" width="6" height="6" rx="1"></rect>
+            <rect x="9" y="15" width="6" height="6" rx="1"></rect>
+            <path d="M5 9v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"></path>
+            <path d="M12 13v2"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Redes de Datos</strong>
+          <small>Capas 1 a 3 · Guía Interactiva</small>
+        </span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button type="button" class="nav-btn is-active" data-view="home">Inicio</button>
+        <button type="button" class="nav-btn" data-view="quiz">Exámenes</button>
+        <button type="button" class="nav-btn" data-view="diagrams">Mapas y Gráficos</button>
+        <button type="button" class="nav-btn" data-view="deep">Preguntas Profundas</button>
+      </nav>
+
+      <div class="topbar-actions">
+        <button type="button" id="btn-open-glossary" class="btn btn-ghost btn-sm" title="Abrir glosario completo">
+          <span>Glosario</span>
+        </button>
+        <button type="button" id="btn-toggle-theme" class="btn btn-ghost btn-icon" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema">
+          <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- ==================== VISTA INICIO ==================== -->
+    <section id="view-home" class="view is-active">
+      <div class="container">
+        <div class="hero-banner">
+          <div class="hero-copy">
+            <span class="pill pill-primary">100% Offline · Basado en tu apunte</span>
+            <h1>Estudiá Redes de Datos con práctica activa</h1>
+            <p>
+              Elegí entre exámenes multiple choice con corrección automática y explicación, mapas conceptuales y simuladores gráficos interactivos, o preguntas de indagación profunda para dominar los fundamentos.
+            </p>
+          </div>
+          <div class="stats-strip" aria-label="Tu progreso de estudio">
+            <div class="stat-box">
+              <span class="stat-label">Exámenes rendidos</span>
+              <strong id="stat-exams-count" class="stat-value">0</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Promedio histórico</span>
+              <strong id="stat-avg-score" class="stat-value">—</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Profundas dominadas</span>
+              <strong id="stat-deep-mastered" class="stat-value">0 / 45</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Términos en glosario</span>
+              <strong id="stat-glossary-count" class="stat-value">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-heading">¿Cómo querés estudiar hoy?</h2>
+        <div class="hero-cards-grid">
+          <article class="mode-card mode-card-quiz">
+            <div class="mode-card-header">
+              <span class="mode-icon mode-icon-blue" aria-hidden="true">✓</span>
+              <span class="pill pill-blue">75 preguntas</span>
+            </div>
+            <h3>Exámenes Multiple Choice</h3>
+            <p>
+              Simulacros por unidad, examen integral o modo especial de <strong>trampas de parcial</strong>. Al entregar, ves tu nota, el desglose por unidad y la explicación de cada respuesta.
+            </p>
+            <ul class="feature-list">
+              <li>Sin spoilers mientras rendís</li>
+              <li>Revisión automática al entregar</li>
+              <li>Reintento focalizado de errores</li>
+            </ul>
+            <div class="mode-card-actions">
+              <button type="button" class="btn btn-primary" data-goto-view="quiz">Configurar examen</button>
+              <button type="button" class="btn btn-outline" data-quick-quiz="traps">Modo Trampas</button>
+            </div>
+          </article>
+
+          <article class="mode-card mode-card-diagrams">
+            <div class="mode-card-header">
+              <span class="mode-icon mode-icon-teal" aria-hidden="true">◈</span>
+              <span class="pill pill-teal">6 módulos SVG</span>
+            </div>
+            <h3>Mapas Conceptuales y Gráficos</h3>
+            <p>
+              Explorá el mapa de capas 1–3, simulá la carga <em>G</em> de ALOHA, inspeccioná tramas Ethernet y 802.11, probá el aprendizaje de un switch paso a paso y seguí un paquete por un router.
+            </p>
+            <ul class="feature-list">
+              <li>Curvas ALOHA y regla 2τ interactivas</li>
+              <li>Simulador vivo de Tabla MAC y STP</li>
+              <li>Cabeceras IPv4 vs IPv6 clicables</li>
+            </ul>
+            <div class="mode-card-actions">
+              <button type="button" class="btn btn-teal" data-goto-view="diagrams">Explorar gráficos</button>
+            </div>
+          </article>
+
+          <article class="mode-card mode-card-deep">
+            <div class="mode-card-header">
+              <span class="mode-icon mode-icon-violet" aria-hidden="true">?</span>
+              <span class="pill pill-violet">45 guías socráticas</span>
+            </div>
+            <h3>Preguntas para Indagar en Profundidad</h3>
+            <p>
+              Banco de preguntas abiertas ("¿Por qué funciona así?", "¿Qué pasaría si...?", comparaciones y escenarios) con pistas, notas personales y checklist de conceptos clave.
+            </p>
+            <ul class="feature-list">
+              <li>Modo auto-interrogación aleatoria</li>
+              <li>Notas guardadas localmente</li>
+              <li>Control de dominio por tema</li>
+            </ul>
+            <div class="mode-card-actions">
+              <button type="button" class="btn btn-violet" data-goto-view="deep">Indagar en profundidad</button>
+            </div>
+          </article>
+        </div>
+
+        <h2 class="section-heading">Unidades del apunte</h2>
+        <div id="home-units-grid" class="units-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA EXÁMENES ==================== -->
+    <section id="view-quiz" class="view">
+      <div class="container">
+        <!-- Configuración -->
+        <div id="quiz-setup-panel">
+          <div class="view-header">
+            <div>
+              <span class="pill pill-blue">Autoevaluación</span>
+              <h1>Exámenes Multiple Choice</h1>
+              <p class="muted">Elegí el temario y la cantidad de preguntas. La corrección se realiza automáticamente al entregar.</p>
+            </div>
+          </div>
+
+          <div class="quiz-setup-layout">
+            <div class="card">
+              <h3>1. Elegí el alcance del examen</h3>
+              <div id="quiz-mode-grid" class="quiz-mode-grid">
+                <button type="button" class="quiz-mode-option is-selected" data-mode="all">
+                  <strong>Simulacro Integral (Todas)</strong>
+                  <span>Mezcla de las 5 unidades del apunte</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="traps">
+                  <strong>Trampas de Parcial (Sección 9.2)</strong>
+                  <span>Afirmaciones confusas y errores típicos</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="u2">
+                  <strong>U2 · Subcapa MAC</strong>
+                  <span>ALOHA, CSMA/CD, CSMA/CA, ocultas/expuestas</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="u3">
+                  <strong>U3 · Ethernet (802.3)</strong>
+                  <span>PHY, trama 64–1518 B, MAC, duplex</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="u4">
+                  <strong>U4 · Conmutación, STP y PoE</strong>
+                  <span>Switch, tabla MAC, 802.1D, VLAN, PoE</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="u5">
+                  <strong>U5 · Wi-Fi (802.11)</strong>
+                  <span>Canales, OFDM/MIMO/ax, DCF/EDCA, WPA3</span>
+                </button>
+                <button type="button" class="quiz-mode-option" data-mode="u6">
+                  <strong>U6 · Capa de Red (IPv4 / IPv6)</strong>
+                  <span>IP, subnetting, ARP, DHCP, NAT, routing</span>
+                </button>
+              </div>
+
+              <div class="quiz-config-row">
+                <div class="form-group">
+                  <label for="quiz-count-select">2. Cantidad de preguntas</label>
+                  <select id="quiz-count-select" class="input">
+                    <option value="10">10 preguntas (rápido)</option>
+                    <option value="15" selected>15 preguntas (estándar)</option>
+                    <option value="25">25 preguntas (parcial)</option>
+                    <option value="all">Todas las disponibles</option>
+                  </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="quiz-shuffle-check" checked>
+                    <span>Mezclar orden de preguntas y opciones</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="setup-footer">
+                <span id="quiz-available-count" class="muted">75 preguntas disponibles</span>
+                <button type="button" id="btn-start-quiz" class="btn btn-primary btn-lg">Comenzar examen</button>
+              </div>
+            </div>
+
+            <aside class="card">
+              <div class="card-header-row">
+                <h3>Historial de intentos</h3>
+                <button type="button" id="btn-clear-history" class="btn btn-ghost btn-xs">Limpiar</button>
+              </div>
+              <div id="quiz-history-list" class="history-list">
+                <p class="muted">Todavía no entregaste ningún examen.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Examen en curso -->
+        <div id="quiz-active-panel" hidden>
+          <div class="quiz-topbar card">
+            <div>
+              <strong id="quiz-active-title">Examen en curso</strong>
+              <div id="quiz-progress-text" class="muted small">Respondidas 0 de 15</div>
+            </div>
+            <div class="quiz-topbar-right">
+              <div class="timer-badge" aria-label="Tiempo transcurrido">
+                ⏱ <span id="quiz-timer">00:00</span>
+              </div>
+              <button type="button" id="btn-submit-quiz" class="btn btn-success">Entregar examen</button>
+            </div>
+          </div>
+
+          <div class="progress-bar-track">
+            <div id="quiz-progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+          </div>
+
+          <div class="quiz-runner-layout">
+            <div class="card quiz-question-card">
+              <div class="question-meta-row">
+                <div class="badges-group">
+                  <span id="quiz-q-unit-badge" class="pill pill-blue">Unidad</span>
+                  <span id="quiz-q-topic-badge" class="pill">Tema</span>
+                  <span id="quiz-q-trap-badge" class="pill pill-red" hidden>Trampa típica</span>
+                </div>
+                <button type="button" id="btn-flag-question" class="btn btn-ghost btn-sm">
+                  ⚑ Marcar para revisar
+                </button>
+              </div>
+
+              <div id="quiz-q-number" class="q-number-label">Pregunta 1 de 15</div>
+              <h2 id="quiz-q-text" class="question-text"></h2>
+
+              <div id="quiz-options-list" class="options-list" role="radiogroup" aria-label="Opciones de respuesta"></div>
+
+              <div class="question-nav-footer">
+                <button type="button" id="btn-prev-q" class="btn btn-outline">← Anterior</button>
+                <button type="button" id="btn-next-q" class="btn btn-primary">Siguiente →</button>
+              </div>
+            </div>
+
+            <aside class="card quiz-nav-sidebar">
+              <h4>Navegador</h4>
+              <div id="quiz-question-grid" class="question-grid"></div>
+              <div class="legend-mini">
+                <span><i class="dot dot-answered"></i> Respondida</span>
+                <span><i class="dot dot-flagged"></i> Marcada</span>
+                <span><i class="dot dot-empty"></i> Pendiente</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Resultados y revisión -->
+        <div id="quiz-results-panel" hidden>
+          <div class="results-hero card">
+            <div class="results-score-block">
+              <span id="result-verdict-badge" class="pill pill-green">Resultado</span>
+              <div class="score-big">
+                <strong id="result-score-pct">0%</strong>
+                <span id="result-score-frac">0 / 0 correctas</span>
+              </div>
+              <div class="muted">Tiempo total: <strong id="result-time">00:00</strong></div>
+              <div class="results-actions">
+                <button type="button" id="btn-retry-wrong" class="btn btn-warning">Reintentar incorrectas</button>
+                <button type="button" id="btn-new-quiz" class="btn btn-primary">Nuevo examen</button>
+              </div>
+            </div>
+
+            <div class="results-breakdown-block">
+              <h3>Rendimiento por unidad</h3>
+              <div id="result-unit-breakdown" class="breakdown-list"></div>
+            </div>
+          </div>
+
+          <div class="review-toolbar">
+            <h3>Revisión automática detallada</h3>
+            <div class="filter-pills">
+              <button type="button" class="review-filter-btn is-active" data-filter="all">Todas</button>
+              <button type="button" class="review-filter-btn" data-filter="wrong">Incorrectas</button>
+              <button type="button" class="review-filter-btn" data-filter="correct">Correctas</button>
+              <button type="button" class="review-filter-btn" data-filter="unanswered">Sin responder</button>
+            </div>
+          </div>
+
+          <div id="quiz-review-list" class="review-list"></div>
+        </div>
+      </div>
+
+      <!-- Modal confirmar entrega con preguntas sin responder -->
+      <div id="quiz-confirm-modal" class="modal-backdrop" hidden>
+        <div class="modal-card modal-sm" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+          <h3 id="confirm-modal-title">¿Entregar examen ahora?</h3>
+          <p id="quiz-unanswered-warn" class="muted"></p>
+          <div class="modal-actions">
+            <button type="button" id="btn-cancel-submit" class="btn btn-outline">Seguir revisando</button>
+            <button type="button" id="btn-confirm-submit" class="btn btn-success">Sí, entregar y corregir</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA MAPAS Y GRÁFICOS ==================== -->
+    <section id="view-diagrams" class="view">
+      <div class="container">
+        <div class="view-header">
+          <div>
+            <span class="pill pill-teal">Aprendizaje Visual</span>
+            <h1>Mapas Conceptuales y Explicaciones Gráficas</h1>
+            <p class="muted">Interactuá con los diagramas, simuladores y exploradores de tramas para entender la lógica detrás de cada protocolo.</p>
+          </div>
+        </div>
+
+        <div class="diagram-tabs" role="tablist" aria-label="Módulos visuales">
+          <button type="button" class="diagram-tab-btn is-active" data-tab="map" role="tab">1. Mapa Conceptual Global</button>
+          <button type="button" class="diagram-tab-btn" data-tab="mac" role="tab">2. Acceso MAC y ALOHA</button>
+          <button type="button" class="diagram-tab-btn" data-tab="ethernet" role="tab">3. Trama Ethernet y PHY</button>
+          <button type="button" class="diagram-tab-btn" data-tab="switching" role="tab">4. Switch, STP y PoE</button>
+          <button type="button" class="diagram-tab-btn" data-tab="wifi" role="tab">5. Wi-Fi 802.11</button>
+          <button type="button" class="diagram-tab-btn" data-tab="network" role="tab">6. IPv4, IPv6 y Router</button>
+        </div>
+
+        <div id="diagram-stage" class="diagram-stage"></div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA PREGUNTAS PROFUNDAS ==================== -->
+    <section id="view-deep" class="view">
+      <div class="container">
+        <div class="view-header">
+          <div>
+            <span class="pill pill-violet">Comprensión Socrática</span>
+            <h1>Preguntas para Indagar en Profundidad</h1>
+            <p class="muted">No memorices definiciones sueltas: explicá los mecanismos en voz alta o por escrito, compará contra las claves del apunte y marcá tu nivel de dominio.</p>
+          </div>
+          <button type="button" id="btn-deep-random" class="btn btn-violet">🎲 Auto-interrogación aleatoria</button>
+        </div>
+
+        <div class="card deep-progress-card">
+          <div class="deep-stats-row">
+            <span>Dominadas: <strong id="deep-stat-mastered" class="text-success">0</strong></span>
+            <span>Dudosas: <strong id="deep-stat-doubt" class="text-warning">0</strong></span>
+            <span>Pendientes: <strong id="deep-stat-pending">45</strong></span>
+          </div>
+          <div class="progress-bar-track">
+            <div id="deep-progress-fill" class="progress-bar-fill progress-bar-violet" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Modo focalizado aleatorio -->
+        <div id="deep-random-panel" class="deep-random-panel" hidden>
+          <div class="random-panel-bar">
+            <strong>Modo Auto-interrogación (pregunta pendiente o dudosa al azar)</strong>
+            <div class="random-panel-actions">
+              <button type="button" id="btn-next-random" class="btn btn-violet btn-sm">Otra pregunta</button>
+              <button type="button" id="btn-exit-random" class="btn btn-outline btn-sm">Volver a la lista</button>
+            </div>
+          </div>
+          <div id="deep-random-card"></div>
+        </div>
+
+        <!-- Filtros -->
+        <div id="deep-filters-bar" class="card filters-bar">
+          <div class="filter-item">
+            <label for="deep-filter-unit">Unidad</label>
+            <select id="deep-filter-unit" class="input">
+              <option value="all">Todas las unidades</option>
+              <option value="u2">U2 · Subcapa MAC</option>
+              <option value="u3">U3 · Ethernet 802.3</option>
+              <option value="u4">U4 · Switches, STP y PoE</option>
+              <option value="u5">U5 · Wi-Fi 802.11</option>
+              <option value="u6">U6 · Capa de Red (IP)</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="deep-filter-category">Enfoque</label>
+            <select id="deep-filter-category" class="input">
+              <option value="all">Todos los enfoques</option>
+              <option value="porque">¿Por qué funciona así?</option>
+              <option value="quepasaria">¿Qué pasaría si...?</option>
+              <option value="comparacion">Comparación crítica</option>
+              <option value="escenario">Escenario / Cálculo</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="deep-filter-status">Estado</label>
+            <select id="deep-filter-status" class="input">
+              <option value="all">Todos</option>
+              <option value="pending">Pendiente</option>
+              <option value="doubt">Dudosa</option>
+              <option value="mastered">Dominada</option>
+            </select>
+          </div>
+          <div class="filter-item filter-search">
+            <label for="deep-search-input">Buscar tema o palabra</label>
+            <input type="search" id="deep-search-input" class="input" placeholder="Ej: 2τ, NAT, beacon, STP...">
+          </div>
+        </div>
+
+        <div id="deep-cards-list" class="deep-cards-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== MODAL GLOSARIO ==================== -->
+  <div id="glossary-modal" class="modal-backdrop" hidden>
+    <div class="modal-card modal-lg" role="dialog" aria-modal="true" aria-labelledby="glossary-modal-title">
+      <div class="modal-header">
+        <div>
+          <h2 id="glossary-modal-title">Glosario Completo de Redes de Datos</h2>
+          <span id="glossary-count-badge" class="muted small">0 términos</span>
+        </div>
+        <button type="button" id="btn-close-glossary" class="btn btn-ghost btn-icon" aria-label="Cerrar glosario">✕</button>
+      </div>
+      <div class="glossary-controls">
+        <input type="search" id="glossary-search-input" class="input" placeholder="Filtrar término o definición (ej: ARP, CSMA, Beacon, MTU...)">
+        <div class="glossary-groups">
+          <button type="button" class="glossary-group-btn is-active" data-group="all">Todos</button>
+          <button type="button" class="glossary-group-btn" data-group="mac">MAC</button>
+          <button type="button" class="glossary-group-btn" data-group="ethernet">Ethernet / Switch</button>
+          <button type="button" class="glossary-group-btn" data-group="wifi">Wi-Fi 802.11</button>
+          <button type="button" class="glossary-group-btn" data-group="red">Capa de Red</button>
+        </div>
+      </div>
+      <div id="glossary-list" class="glossary-list"></div>
+    </div>
+  </div>
+
+  <!-- Scripts clásicos sin type="module" para compatibilidad total bajo file:// -->
+  <script src="js/data-quiz.js"></script>
+  <script src="js/data-deep.js"></script>
+  <script src="js/data-diagrams.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/diagrams.js"></script>
+  <script src="js/deep-questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
