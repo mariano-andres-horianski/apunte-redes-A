@@ -1,0 +1,562 @@
+/* ==================== EXTENSIONES MODULARES (APUNTE, TABLAS Y LABS EXTRA) ==================== */
+
+.notes-toolbar,
+.tables-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.notes-toolbar-top,
+.tables-toolbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.notes-unit-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.notes-search-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.notes-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.notes-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.note-section-card {
+  padding: 0;
+  overflow: hidden;
+  border-left: 4px solid var(--primary);
+}
+
+.note-section-card.is-read {
+  border-left-color: var(--success);
+}
+
+.note-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-elev);
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.note-section-header:hover {
+  background: var(--bg-subtle);
+}
+
+.note-section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.note-section-title-wrap h3 {
+  margin: 0;
+  font-size: 1.04rem;
+}
+
+.note-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.note-read-btn {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elev);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.28rem 0.68rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.note-read-btn.is-read {
+  background: var(--success-soft);
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.note-section-body {
+  padding: 0 1.25rem 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.note-summary {
+  margin-top: 0.9rem;
+  font-weight: 500;
+}
+
+.note-subsection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.note-callout {
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  font-size: 0.89rem;
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--border-strong);
+}
+
+.note-callout strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.callout-formula {
+  background: var(--teal-soft);
+  border-left-color: var(--teal);
+}
+
+.callout-trap {
+  background: var(--danger-soft);
+  border-left-color: var(--danger);
+}
+
+.callout-extra {
+  background: var(--primary-soft);
+  border-left-color: var(--primary);
+}
+
+.note-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ==================== TABLAS RESUMEN ==================== */
+.tables-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.table-ref-card h3 {
+  margin: 0.25rem 0 0.2rem;
+  font-size: 1.08rem;
+}
+
+.table-scroll-wrap {
+  overflow-x: auto;
+  margin-top: 0.65rem;
+}
+
+.recall-cell {
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border-radius: 4px;
+}
+
+.recall-cell.is-hidden {
+  color: transparent !important;
+  text-shadow: 0 0 8px var(--text-muted);
+  user-select: none;
+  background: var(--bg-subtle);
+}
+
+.recall-cell.is-hidden code,
+.recall-cell.is-hidden strong {
+  color: transparent !important;
+}
+
+.recall-cell.is-hidden:hover {
+  outline: 1px dashed var(--primary);
+}
+
+/* ==================== SIMULADORES EXTRA (TABS 7-10) ==================== */
+.sim-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+}
+
+.sim-controls-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 0.85rem;
+}
+
+.timeline-track {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1rem;
+}
+
+.timeline-pill {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-subtle);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.42rem 0.72rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+
+.timeline-pill small {
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.timeline-pill.is-active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.timeline-pill.is-active small {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.bit-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 0.65rem 0;
+}
+
+.bit-box {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.28rem 0.36rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-subtle);
+  text-align: center;
+  min-width: 24px;
+}
+
+.bit-box.is-net {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.bit-box.is-host {
+  background: var(--teal-soft);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.bit-box.is-sep {
+  border: none;
+  background: transparent;
+  min-width: 8px;
+  padding: 0.28rem 0.1rem;
+  color: var(--text-muted);
+}
+
+.window-track {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.45rem;
+  margin: 0.85rem 0;
+}
+
+.pkt-box {
+  border: 2px solid var(--border-strong);
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.3rem;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.8rem;
+}
+
+.pkt-box strong {
+  font-family: var(--font-mono);
+}
+
+.pkt-box.pkt-ok {
+  background: var(--success-soft);
+  border-color: var(--success);
+}
+
+.pkt-box.pkt-lost {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+.pkt-box.pkt-buffered {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+
+.pkt-box.pkt-resent {
+  background: var(--warning-soft);
+  border-color: var(--warning);
+}
+
+.airtime-bar-track {
+  width: 100%;
+  height: 22px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  margin: 0.45rem 0 0.75rem;
+}
+
+.airtime-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.frag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.65rem;
+  margin: 0.75rem 0;
+}
+
+.frag-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.75rem;
+  font-size: 0.84rem;
+}
+
+.ipv6-group-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+}
+
+.ipv6-group {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 0.45rem 0.25rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ipv6-group.is-zero {
+  border-color: var(--violet);
+  background: var(--violet-soft);
+}
+
+.route-row-match {
+  background: var(--primary-soft);
+}
+
+.route-row-win {
+  background: var(--success-soft);
+  font-weight: 700;
+}
+
+.quiz-mini-inline {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 960px) {
+  .sim-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .notes-search-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .window-track,
+  .ipv6-group-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==================== CUADRO INTRODUCTORIO EN MAPAS Y GRÁFICOS ==================== */
+.diagram-intro-box {
+  border-left: 4px solid var(--teal);
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+}
+
+.diagram-intro-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.45rem;
+}
+
+.diagram-intro-head h2 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.diagram-intro-text {
+  margin: 0 0 0.7rem;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+.diagram-intro-topics {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.diagram-intro-topics .pill {
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+
+/* ==================== INTRODUCCIÓN TEÓRICA DESDE CERO ==================== */
+.diagram-theory-box {
+  border-left: 4px solid var(--primary);
+  margin-bottom: 0.9rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.diagram-theory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.diagram-theory-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.diagram-theory-title-wrap h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.diagram-theory-body {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.diagram-theory-problem {
+  margin: 0 0 0.55rem;
+  font-size: 0.94rem;
+}
+
+.diagram-theory-lead {
+  margin: 0 0 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+.diagram-theory-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.diagram-theory-pillar {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  font-size: 0.86rem;
+}
+
+.diagram-theory-pillar strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+
+.diagram-theory-pillar p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.diagram-theory-bridge {
+  background: var(--primary-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 960px) {
+  .diagram-theory-pillars {
+    grid-template-columns: 1fr;
+  }
+}
